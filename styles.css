@@ -207,14 +207,22 @@ a {
   margin: 0;
 }
 
-.gallery-card .placeholder-img {
+.gallery-card .placeholder-img,
+.gallery-card img {
   aspect-ratio: 4 / 3;
   border-radius: 10px;
   box-shadow: 0 4px 14px rgba(46, 38, 32, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.gallery-card:hover .placeholder-img {
+.gallery-card img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.gallery-card:hover .placeholder-img,
+.gallery-card:hover img {
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 10px 24px rgba(46, 38, 32, 0.14);
 }

@@ -27,9 +27,10 @@ Search the project for these placeholders and replace them:
 ## Swapping placeholder photos for real ones
 
 The portfolio gallery currently shows labeled gray boxes instead of real
-photos (there weren't any ready yet when this site was built; the About
-section headshot has already been swapped for a real photo at
-`images/headshot.jpg`). To replace a gallery placeholder:
+photos, except for the Athens card (`images/gallery/athens.jpg`), which has
+already been swapped in. The About section headshot has also already been
+swapped for a real photo at `images/headshot.jpg`. To replace a remaining
+gallery placeholder:
 
 1. Add your image file to `images/gallery/` (for gallery photos) — pick any
    filename, e.g. `santorini.jpg`.
