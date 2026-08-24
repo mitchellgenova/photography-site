@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js');
+
 document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.getElementById('navToggle');
   const siteNav = document.getElementById('siteNav');

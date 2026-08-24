@@ -102,16 +102,19 @@ a {
 }
 
 @media (max-width: 640px) {
-  .nav-toggle {
+  .js .nav-toggle {
     display: flex;
   }
 
   .site-nav {
-    display: none;
     flex-direction: column;
     gap: 0;
     width: 100%;
     padding: 0.5rem 1.5rem 1rem;
+  }
+
+  .js .site-nav {
+    display: none;
   }
 
   .site-nav.is-open {
