@@ -195,3 +195,33 @@ a {
   font-size: 0.85rem;
   color: var(--color-muted);
 }
+
+.services {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  background-color: var(--color-bg-alt);
+}
+
+.service-primary,
+.service-secondary {
+  margin-bottom: 1.5rem;
+}
+
+.service-secondary p {
+  color: var(--color-muted);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.cta-button:hover {
+  opacity: 0.85;
+}
