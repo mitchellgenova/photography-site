@@ -24,4 +24,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !prefersReducedMotion) {
+    const revealTargets = document.querySelectorAll(
+      '.gallery-card, .portfolio h2, .services h2, .about h2, .contact h2'
+    );
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealTargets.forEach(el => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+  }
 });
