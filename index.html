@@ -97,7 +97,33 @@
         <p>[Write a short bio here — who you are, how long you've been shooting, and what makes your eye for a property or a scene different. A couple of sentences is plenty.]</p>
       </div>
     </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <!-- Replace YOUR_FORM_ID below with your own Formspree form ID.
+           Sign up free at https://formspree.io, create a form, and copy its ID here. -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <button type="submit">Send message</button>
+      </form>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <!-- Replace with your real Instagram (or other) handle -->
+    <a href="https://instagram.com/yourhandle" class="social-link">Instagram</a>
+    <p>&copy; 2026 [Your Name]. All rights reserved.</p>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
