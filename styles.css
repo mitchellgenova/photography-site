@@ -153,3 +153,45 @@ a {
   color: var(--color-muted);
   font-size: 0.9rem;
 }
+
+.placeholder-img {
+  background-color: var(--color-placeholder-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-placeholder-text);
+  font-size: 0.85rem;
+  padding: 1rem;
+}
+
+.portfolio {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.portfolio h2 {
+  margin-bottom: 1.5rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.gallery-card {
+  margin: 0;
+}
+
+.gallery-card .placeholder-img {
+  aspect-ratio: 4 / 3;
+  border-radius: 4px;
+}
+
+.gallery-card figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
