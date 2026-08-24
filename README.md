@@ -15,8 +15,6 @@ Then open http://localhost:8000 in a browser.
 
 Search the project for these placeholders and replace them:
 
-- The About section bio text in `index.html` (`<section id="about">`) —
-  replace the bracketed placeholder paragraph with your real bio.
 - `YOUR_FORM_ID` in the contact form's `action` attribute in `index.html`
   (`<section id="contact">`) — sign up for a free account at
   https://formspree.io, create a form, and paste its ID in place of
@@ -28,9 +26,10 @@ Search the project for these placeholders and replace them:
 
 ## Swapping placeholder photos for real ones
 
-The portfolio gallery and About headshot currently show labeled gray boxes
-instead of real photos (there weren't any ready yet when this site was
-built). To replace one:
+The portfolio gallery currently shows labeled gray boxes instead of real
+photos (there weren't any ready yet when this site was built; the About
+section headshot has already been swapped for a real photo at
+`images/headshot.jpg`). To replace a gallery placeholder:
 
 1. Add your image file to `images/gallery/` (for gallery photos) — pick any
    filename, e.g. `santorini.jpg`.
@@ -44,9 +43,6 @@ built). To replace one:
    Leave the surrounding `<figure>` and `<figcaption>` as they are — the
    existing CSS (`.gallery-card`, `figcaption`) will style the real photo
    the same way it styled the placeholder.
-4. For the About section headshot, do the same inside `<section
-   id="about">`: replace the `.placeholder-img.placeholder-headshot` div
-   with an `<img>` tag pointing at your headshot file.
 
 To add more gallery photos than currently exist, copy an existing
 `<figure class="gallery-card">...</figure>` block in the portfolio section

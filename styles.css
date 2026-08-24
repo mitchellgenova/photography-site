@@ -272,11 +272,13 @@ a {
   align-items: flex-start;
 }
 
-.placeholder-headshot {
+.headshot {
   width: 160px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   box-shadow: 0 4px 14px rgba(46, 38, 32, 0.08);
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 @media (min-width: 640px) {
