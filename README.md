@@ -1,4 +1,4 @@
-# [Your Name] Photography — Portfolio Site
+# Mitchell Genova Photography — Portfolio Site
 
 A single-page static portfolio site: no build tools, no dependencies. Open
 `index.html` in a browser or serve it locally to preview.
@@ -15,8 +15,6 @@ Then open http://localhost:8000 in a browser.
 
 Search the project for these placeholders and replace them:
 
-- `[Your Name]` — appears in `index.html` (page title, header logo, hero
-  heading, footer copyright) and in `README.md`'s title.
 - The About section bio text in `index.html` (`<section id="about">`) —
   replace the bracketed placeholder paragraph with your real bio.
 - `YOUR_FORM_ID` in the contact form's `action` attribute in `index.html`
