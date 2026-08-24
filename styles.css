@@ -131,6 +131,14 @@ a {
   }
 }
 
+#top,
+#portfolio,
+#services,
+#about,
+#contact {
+  scroll-margin-top: 80px;
+}
+
 .hero {
   max-width: var(--max-width);
   margin: 0 auto;
