@@ -225,3 +225,29 @@ a {
 .cta-button:hover {
   opacity: 0.85;
 }
+
+.about {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.about-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.placeholder-headshot {
+  width: 160px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+@media (min-width: 640px) {
+  .about-inner {
+    flex-direction: row;
+    align-items: center;
+  }
+}
