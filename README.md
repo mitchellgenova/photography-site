@@ -24,31 +24,30 @@ Search the project for these placeholders and replace them:
   class="site-footer">`) — replace with your real social link, or remove
   the `<a>` entirely if you don't want to link one.
 
-## Swapping placeholder photos for real ones
+## Adding more gallery photos
 
-The portfolio gallery currently shows labeled gray boxes instead of real
-photos, except for the Athens card (`images/gallery/athens.jpg`), which has
-already been swapped in. The About section headshot has also already been
-swapped for a real photo at `images/headshot.jpg`. To replace a remaining
-gallery placeholder:
+Every portfolio card currently shows a real photo (`images/gallery/`), and
+the About section headshot is a real photo too (`images/headshot.jpg`). To
+add another gallery card:
 
-1. Add your image file to `images/gallery/` (for gallery photos) — pick any
-   filename, e.g. `santorini.jpg`.
-2. In `index.html`, find the matching `<figure class="gallery-card">` block
-   in the `<section id="portfolio">` section.
-3. Delete its `<div class="placeholder-img" ...>...</div>` and replace it
-   with:
+1. Add your image file to `images/gallery/` — pick any filename, e.g.
+   `santorini.jpg`.
+2. In `index.html`, copy an existing `<figure class="gallery-card">...
+   </figure>` block in the `<section id="portfolio">` section and edit its
+   image `src`/`alt` and `<figcaption>`:
    ```html
-   <img src="images/gallery/santorini.jpg" alt="Santorini, Greece">
+   <figure class="gallery-card">
+     <button class="gallery-card-trigger" type="button">
+       <img src="images/gallery/santorini.jpg" alt="Santorini, Greece">
+     </button>
+     <figcaption>Santorini, Greece</figcaption>
+   </figure>
    ```
-   Leave the surrounding `<figure>` and `<figcaption>` as they are — the
-   existing CSS (`.gallery-card`, `figcaption`) will style the real photo
-   the same way it styled the placeholder.
+   The `gallery-card-trigger` button is what makes the photo open in the
+   fullscreen lightbox — a `<figure>` without it (like a placeholder) stays
+   inert and won't open on click.
 
-To add more gallery photos than currently exist, copy an existing
-`<figure class="gallery-card">...</figure>` block in the portfolio section
-and edit its image/caption — the CSS grid will automatically reflow to fit
-more cards.
+   The CSS grid reflows automatically to fit however many cards you add.
 
 ## Real estate gallery
 
