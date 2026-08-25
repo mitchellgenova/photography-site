@@ -213,33 +213,62 @@ a {
 }
 
 .hero {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 6rem 1.5rem 4rem;
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  background: radial-gradient(ellipse at top, rgb(var(--accent-shadow-tint) / 0.1), transparent 60%);
+  padding: 6rem 1.5rem;
+  overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.hero::before {
+  background-image: url("images/hero-rome.jpg");
+  background-size: cover;
+  background-position: center 30%;
+  z-index: 0;
+}
+
+.hero::after {
+  background: linear-gradient(180deg, rgba(20, 16, 12, 0.55), rgba(20, 16, 12, 0.75));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width);
 }
 
 .hero h1 {
-  font-size: 2.75rem;
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  color: #f5f1ea;
 }
 
 .hero .tagline {
-  color: var(--color-muted);
-  font-size: 1.1rem;
+  color: #d9d1c4;
+  font-size: 1.2rem;
   letter-spacing: 0.01em;
   margin-bottom: 2rem;
 }
 
 .hero .scroll-cue {
   text-decoration: none;
-  color: var(--color-accent);
+  color: #f0a878;
   font-size: 0.9rem;
   transition: color 0.2s ease;
 }
 
 .hero .scroll-cue:hover {
-  color: var(--color-accent-dark);
+  color: #f5c4a3;
 }
 
 .placeholder-img {
@@ -259,14 +288,50 @@ a {
   padding: 3rem 1.5rem;
 }
 
-.portfolio h2 {
-  margin-bottom: 1.5rem;
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.section-number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.section-header h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .services,
+  .about {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .services .section-header,
+  .about .section-header {
+    margin-bottom: 0;
+  }
 }
 
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-auto-flow: dense;
   gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .gallery-card--featured {
+    grid-column: span 2;
+  }
 }
 
 .gallery-card {

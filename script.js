@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if ('IntersectionObserver' in window && !prefersReducedMotion) {
     const revealTargets = document.querySelectorAll(
-      '.gallery-card, .portfolio h2, .services h2, .about h2, .contact h2'
+      '.gallery-card, .section-header'
     );
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
