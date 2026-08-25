@@ -22,6 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
         siteNav.classList.remove('is-open');
         navToggle.setAttribute('aria-expanded', 'false');
       }
+
+      if (link.classList.contains('cta-button')) {
+        const nameField = document.getElementById('name');
+        if (nameField) {
+          window.setTimeout(() => nameField.focus(), 600);
+        }
+      }
     });
   });
 
