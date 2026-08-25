@@ -37,27 +37,39 @@
       <h2>Portfolio</h2>
       <div class="gallery-grid">
         <figure class="gallery-card">
-          <img src="images/gallery/athens.jpg" alt="Odeon of Herodes Atticus, Athens, Greece">
+          <button class="gallery-card-trigger" type="button">
+            <img src="images/gallery/athens.jpg" alt="Odeon of Herodes Atticus, Athens, Greece">
+          </button>
           <figcaption>Athens, Greece</figcaption>
         </figure>
         <figure class="gallery-card">
-          <img src="images/gallery/rome.jpg" alt="The Colosseum at night, Rome, Italy">
+          <button class="gallery-card-trigger" type="button">
+            <img src="images/gallery/rome.jpg" alt="The Colosseum at night, Rome, Italy">
+          </button>
           <figcaption>Rome, Italy</figcaption>
         </figure>
         <figure class="gallery-card">
-          <img src="images/gallery/lucerne.jpg" alt="The Lion Monument, Lucerne, Switzerland">
+          <button class="gallery-card-trigger" type="button">
+            <img src="images/gallery/lucerne.jpg" alt="The Lion Monument, Lucerne, Switzerland">
+          </button>
           <figcaption>Lucerne, Switzerland</figcaption>
         </figure>
         <figure class="gallery-card">
-          <img src="images/gallery/paros.jpg" alt="A PAROS sign on the rocky coastline, Paros, Greece">
+          <button class="gallery-card-trigger" type="button">
+            <img src="images/gallery/paros.jpg" alt="A PAROS sign on the rocky coastline, Paros, Greece">
+          </button>
           <figcaption>Paros, Greece</figcaption>
         </figure>
         <figure class="gallery-card">
-          <img src="images/gallery/chiang-mai.jpg" alt="An elephant in the forest, Chiang Mai, Thailand">
+          <button class="gallery-card-trigger" type="button">
+            <img src="images/gallery/chiang-mai.jpg" alt="An elephant in the forest, Chiang Mai, Thailand">
+          </button>
           <figcaption>Chiang Mai, Thailand</figcaption>
         </figure>
         <figure class="gallery-card">
-          <img src="images/gallery/phang-nga-bay.jpg" alt="Khao Phing Kan rock formation, Phang Nga Bay, Thailand">
+          <button class="gallery-card-trigger" type="button">
+            <img src="images/gallery/phang-nga-bay.jpg" alt="Khao Phing Kan rock formation, Phang Nga Bay, Thailand">
+          </button>
           <figcaption>Phang Nga Bay, Thailand</figcaption>
         </figure>
         <figure class="gallery-card">
@@ -67,7 +79,9 @@
           <figcaption>Phi Phi Islands, Thailand</figcaption>
         </figure>
         <figure class="gallery-card">
-          <img src="images/gallery/barcelona.jpg" alt="Stained glass windows inside the Sagrada Família, Barcelona, Spain">
+          <button class="gallery-card-trigger" type="button">
+            <img src="images/gallery/barcelona.jpg" alt="Stained glass windows inside the Sagrada Família, Barcelona, Spain">
+          </button>
           <figcaption>Barcelona, Spain</figcaption>
         </figure>
       </div>
@@ -120,6 +134,15 @@
     <a href="https://instagram.com/yourhandle" class="social-link">Instagram</a>
     <p>&copy; 2026 Mitchell Genova. All rights reserved.</p>
   </footer>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&larr;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next photo">&rarr;</button>
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
