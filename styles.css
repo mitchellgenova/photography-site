@@ -426,6 +426,19 @@ a {
   object-fit: contain;
   border-radius: 4px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-img.slide-out-left,
+.lightbox-img.slide-in-left {
+  opacity: 0;
+  transform: translateX(-24px);
+}
+
+.lightbox-img.slide-out-right,
+.lightbox-img.slide-in-right {
+  opacity: 0;
+  transform: translateX(24px);
 }
 
 .lightbox-caption {

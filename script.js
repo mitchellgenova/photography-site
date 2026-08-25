@@ -80,6 +80,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function navigate(step) {
+    const nextIndex = (currentIndex + step + galleryImages.length) % galleryImages.length;
+
+    if (prefersReducedMotion) {
+      showImage(nextIndex);
+      return;
+    }
+
+    const outClass = step > 0 ? 'slide-out-left' : 'slide-out-right';
+    const inClass = step > 0 ? 'slide-in-right' : 'slide-in-left';
+
+    lightboxImg.classList.add(outClass);
+    window.setTimeout(() => {
+      showImage(nextIndex);
+      lightboxImg.classList.remove(outClass);
+      lightboxImg.classList.add(inClass);
+      void lightboxImg.offsetWidth; // force a reflow so the "in" state is committed before removing it
+      lightboxImg.classList.remove(inClass);
+    }, 200);
+  }
+
   galleryImages.forEach((img, index) => {
     img.closest('.gallery-card-trigger').addEventListener('click', (event) => {
       lastFocused = event.currentTarget;
@@ -88,8 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   lightboxClose.addEventListener('click', closeLightbox);
-  lightboxNext.addEventListener('click', () => showImage((currentIndex + 1) % galleryImages.length));
-  lightboxPrev.addEventListener('click', () => showImage((currentIndex - 1 + galleryImages.length) % galleryImages.length));
+  lightboxNext.addEventListener('click', () => navigate(1));
+  lightboxPrev.addEventListener('click', () => navigate(-1));
 
   lightbox.addEventListener('click', (event) => {
     if (event.target === lightbox) {
@@ -104,9 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.key === 'Escape') {
       closeLightbox();
     } else if (event.key === 'ArrowRight') {
-      showImage((currentIndex + 1) % galleryImages.length);
+      navigate(1);
     } else if (event.key === 'ArrowLeft') {
-      showImage((currentIndex - 1 + galleryImages.length) % galleryImages.length);
+      navigate(-1);
     }
   });
 });
