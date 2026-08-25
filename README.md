@@ -11,14 +11,6 @@ python3 -m http.server 8000
 
 Then open http://localhost:8000 in a browser.
 
-## Before you launch: things to personalize
-
-Search the project for these placeholders and replace them:
-
-- `https://instagram.com/yourhandle` in the footer (`<footer
-  class="site-footer">`) — replace with your real social link, or remove
-  the `<a>` entirely if you don't want to link one.
-
 ## Adding more gallery photos
 
 Every portfolio card currently shows a real photo (`images/gallery/`), and
