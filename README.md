@@ -36,25 +36,6 @@ add another gallery card:
 
    The CSS grid reflows automatically to fit however many cards you add.
 
-   To make a card stand out as a larger "featured" tile in the grid, add
-   `gallery-card--featured` alongside `gallery-card` on its `<figure>` (see
-   the Rome and Barcelona cards for examples). It spans 2 grid columns at
-   viewports 640px and wider; keep it to 1-2 cards at a time so the grid
-   doesn't get lopsided, and note `grid-auto-flow: dense` on `.gallery-grid`
-   will reorder cards visually to fill gaps around featured tiles.
-
-## Hero background
-
-The hero photo (`images/hero-rome.jpg`) is a separate, higher-resolution
-export (2400px) from the same Colosseum shot used in the gallery
-(`images/gallery/rome.jpg`), since it needs to look sharp full-bleed on
-large screens. To swap it for a different photo, replace that file (same
-name) or update the `url(...)` in `.hero::before` in `styles.css`. The dark
-gradient overlay and light-colored hero text (`.hero h1`, `.hero .tagline`,
-`.hero .scroll-cue`) are intentionally NOT theme variables — the hero always
-uses a dark photo backdrop regardless of site theme, so its text stays
-fixed light colors rather than following light/dark mode.
-
 ## Dark mode
 
 The site has a light/dark toggle (sun/moon icon in the header). Colors live
