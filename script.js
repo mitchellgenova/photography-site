@@ -9,6 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
     navToggle.setAttribute('aria-expanded', String(isOpen));
   });
 
+  const themeToggle = document.getElementById('themeToggle');
+  themeToggle.setAttribute('aria-pressed', String(document.documentElement.getAttribute('data-theme') === 'dark'));
+
+  themeToggle.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    themeToggle.setAttribute('aria-pressed', String(next === 'dark'));
+  });
+
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (event) => {
       const targetId = link.getAttribute('href');

@@ -36,6 +36,17 @@ add another gallery card:
 
    The CSS grid reflows automatically to fit however many cards you add.
 
+## Dark mode
+
+The site has a light/dark toggle (sun/moon icon in the header). Colors live
+as CSS custom properties in `styles.css` (`:root` for light, `:root[data-
+theme="dark"]` for dark) — add or adjust a color there and it applies
+everywhere it's used. A first-time visitor gets whichever theme matches
+their system setting; once they click the toggle, their choice is saved in
+`localStorage` and wins from then on. The small inline script in
+`index.html`'s `<head>` sets the theme before the page renders, so there's
+no flash of the wrong theme on load — don't move it or make it `async`.
+
 ## Real estate gallery
 
 There's no real-estate-specific gallery yet since no real estate photos

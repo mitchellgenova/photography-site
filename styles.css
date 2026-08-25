@@ -8,9 +8,23 @@
   --color-placeholder-text: #8a7a68;
   --color-accent: #c1704a;
   --color-accent-dark: #a85c39;
+  --shadow-tint: 46 38 32;
+  --accent-shadow-tint: 193 112 74;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-heading: Georgia, "Iowan Old Style", "Palatino Linotype", ui-serif, serif;
   --max-width: 1100px;
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #1c1712;
+  --color-bg-alt: #262019;
+  --color-text: #f1ebe0;
+  --color-muted: #ab9c87;
+  --color-border: #3c3226;
+  --color-accent: #d98a5f;
+  --color-accent-dark: #e5a37e;
+  --shadow-tint: 0 0 0;
+  --accent-shadow-tint: 217 138 95;
 }
 
 *, *::before, *::after {
@@ -23,6 +37,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.5;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 h1, h2, h3 {
@@ -56,6 +71,7 @@ a {
   top: 0;
   background-color: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
   z-index: 10;
 }
 
@@ -74,6 +90,47 @@ a {
   text-decoration: none;
   font-size: 1.15rem;
   color: var(--color-text);
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--color-accent);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.theme-toggle .icon-moon {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: block;
 }
 
 .nav-toggle {
@@ -109,6 +166,13 @@ a {
 }
 
 @media (max-width: 640px) {
+  .header-controls {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
   .js .nav-toggle {
     display: flex;
   }
@@ -151,7 +215,7 @@ a {
   margin: 0 auto;
   padding: 6rem 1.5rem 4rem;
   text-align: center;
-  background: radial-gradient(ellipse at top, rgba(193, 112, 74, 0.1), transparent 60%);
+  background: radial-gradient(ellipse at top, rgb(var(--accent-shadow-tint) / 0.1), transparent 60%);
 }
 
 .hero h1 {
@@ -211,7 +275,7 @@ a {
 .gallery-card img {
   aspect-ratio: 4 / 3;
   border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(46, 38, 32, 0.08);
+  box-shadow: 0 4px 14px rgb(var(--shadow-tint) / 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -224,7 +288,7 @@ a {
 .gallery-card:hover .placeholder-img,
 .gallery-card:hover img {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 10px 24px rgba(46, 38, 32, 0.14);
+  box-shadow: 0 10px 24px rgb(var(--shadow-tint) / 0.14);
 }
 
 .gallery-card figcaption {
@@ -270,14 +334,14 @@ a {
   text-decoration: none;
   border-radius: 8px;
   font-size: 0.95rem;
-  box-shadow: 0 4px 14px rgba(193, 112, 74, 0.25);
+  box-shadow: 0 4px 14px rgb(var(--accent-shadow-tint) / 0.25);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .cta-button:hover {
   background-color: var(--color-accent-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(193, 112, 74, 0.3);
+  box-shadow: 0 8px 18px rgb(var(--accent-shadow-tint) / 0.3);
 }
 
 .about {
@@ -297,7 +361,7 @@ a {
   width: 160px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  box-shadow: 0 4px 14px rgba(46, 38, 32, 0.08);
+  box-shadow: 0 4px 14px rgb(var(--shadow-tint) / 0.08);
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -342,7 +406,7 @@ a {
 .contact-form textarea:focus {
   outline: none;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(193, 112, 74, 0.15);
+  box-shadow: 0 0 0 3px rgb(var(--accent-shadow-tint) / 0.15);
 }
 
 .contact-form button {
@@ -355,14 +419,14 @@ a {
   font-size: 0.95rem;
   cursor: pointer;
   align-self: flex-start;
-  box-shadow: 0 4px 14px rgba(193, 112, 74, 0.25);
+  box-shadow: 0 4px 14px rgb(var(--accent-shadow-tint) / 0.25);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .contact-form button:hover {
   background-color: var(--color-accent-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(193, 112, 74, 0.3);
+  box-shadow: 0 8px 18px rgb(var(--accent-shadow-tint) / 0.3);
 }
 
 .honeypot {
