@@ -15,11 +15,6 @@ Then open http://localhost:8000 in a browser.
 
 Search the project for these placeholders and replace them:
 
-- `YOUR_FORM_ID` in the contact form's `action` attribute in `index.html`
-  (`<section id="contact">`) — sign up for a free account at
-  https://formspree.io, create a form, and paste its ID in place of
-  `YOUR_FORM_ID`. Until you do this, the contact form will not deliver
-  messages anywhere.
 - `https://instagram.com/yourhandle` in the footer (`<footer
   class="site-footer">`) — replace with your real social link, or remove
   the `<a>` entirely if you don't want to link one.
