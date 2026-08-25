@@ -248,8 +248,9 @@ a {
 .services {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+  padding: 2rem 1.5rem;
   background-color: var(--color-bg-alt);
+  border-radius: 16px;
 }
 
 .service-primary,
